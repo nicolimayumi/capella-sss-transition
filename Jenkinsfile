@@ -70,6 +70,7 @@ pipeline {
         	steps {
         		script {
 	        		sh "chmod 755 ${CAPELLA_PRODUCT_PATH}"
+	        		sh "chmod 755 ${WORKSPACE}/capella/jre/bin/*"
 	        		
 	        		eclipse.installFeature("${CAPELLA_PRODUCT_PATH}", capella.getTestUpdateSiteURL("master"), 'org.polarsys.capella.test.feature.feature.group')
 	        		
